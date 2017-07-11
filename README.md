@@ -1,4 +1,3 @@
-# template
+# MissingNO123's Shitty Updaterer
 
-This is a template for starting new 3DS libctru projects.
-"# updaterer" 
+Grab shit off the website and put it on the 3DS
