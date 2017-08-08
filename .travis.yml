@@ -5,6 +5,7 @@ before_install:
   - export DEVKITPRO=/home/travis/devkitPro
   - export DEVKITARM=${DEVKITPRO}/devkitARM
   - git clone https://github.com/smealum/ctrulib.git
+  - git clone --recursive https://github.com/Steveice10/bannertool
 
 install:
   - sudo perl devkitARMupdate.pl
@@ -13,5 +14,9 @@ install:
   - cd ..
   - sudo cp -rf libctru/ ${DEVKITPRO}
   - cd ..
+  - cd bannertool
+  - make 
+  - sudo cp -rf build/linux-x86_64 ${DEVKITARM}/bin/bannertool
+  
 script:
   - make
