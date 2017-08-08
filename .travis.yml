@@ -5,7 +5,8 @@ before_install:
   - export DEVKITPRO=/home/travis/devkitPro
   - export DEVKITARM=${DEVKITPRO}/devkitARM
   - git clone https://github.com/smealum/ctrulib.git
-  - git clone --recursive https://github.com/Steveice10/bannertool
+  - git clone --recursive https://github.com/Steveice10/bannertool.git
+  - git clone https://github.com/profi200/Project_CTR.git
 
 install:
   - sudo perl devkitARMupdate.pl
@@ -16,7 +17,11 @@ install:
   - cd ..
   - cd bannertool
   - make 
-  - sudo cp -rf build/linux-x86_64 ${DEVKITARM}/bin/bannertool
+  - sudo cp -rf output/linux-x86_64/bannertool ${DEVKITARM}/bin/
+  - cd ..
+  - cd Project_CTR/makerom
+  - make
+  - sudo cp -rf makerom ${DEVKITARM}/bin/
   
 script:
   - make
